@@ -2,10 +2,10 @@ const express = require('express');
 const Sequelize = require('sequelize');
 var cors = require('cors');
 const app = express();
+app.use(require('express-status-monitor')());
 app.use(cors());
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-
 const sequelize = new Sequelize('mysql://root:abc123@172.17.0.2:3306/letschat?insecureAuth=true');
 // const sequelize = new Sequelize('mysql://root:abc123@localhost:3307/letschat?insecureAuth=true');
 
