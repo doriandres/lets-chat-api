@@ -2,7 +2,6 @@ const express = require('express');
 const Sequelize = require('sequelize');
 var cors = require('cors');
 const app = express();
-app.use(require('express-status-monitor')());
 app.use(cors());
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
